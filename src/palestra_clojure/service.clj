@@ -9,7 +9,7 @@
   (GET "/produtos" 
     request 
     {:status 200 :headers {"Content-type" "application/json"} 
-     :body (controller-produto/listar-produtos request)})
+     :body (controller-produto/listar-produtos)})
   (route/not-found "<h1>Page not found</h1>"))
 
 (def handler (wrap-json-response app-routes))
