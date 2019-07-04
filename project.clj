@@ -7,5 +7,7 @@
                  [ring/ring-core "1.6.3"]
                  [ring/ring-jetty-adapter "1.6.3"]
                  [ring/ring-json "0.4.0"]
-                 [compojure "1.6.1"]]
+                 [compojure "1.6.1"]
+                 [mysql/mysql-connector-java "5.1.47"]
+                 [org.clojure/java.jdbc "0.7.9"]]
   :main palestra-clojure.main)

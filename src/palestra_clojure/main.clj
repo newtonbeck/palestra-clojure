@@ -3,10 +3,24 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.json :refer [wrap-json-response]]
-            [ring.adapter.jetty :refer [run-jetty]]))
+            [ring.adapter.jetty :refer [run-jetty]]
+            [clojure.java.jdbc :as jdbc]))
+
+(def db-spec 
+  {
+    :dbtype "mysql"
+    :dbname "palestra"
+    :user "root"
+    :password "123"
+    :host "localhost"
+    :port "3306"
+  })
+
+(defn buscar-no-banco []
+  (jdbc/query db-spec ["select * from produto"]))
 
 (defn listar-produtos [request]
-  {:status 200 :headers {"Content-type" "application/json"} :body {:id 1 :nome "iPhone"}})
+  {:status 200 :headers {"Content-type" "application/json"} :body (buscar-no-banco)})
 
 (defroutes app-routes
   (GET "/produtos" request (listar-produtos request))
