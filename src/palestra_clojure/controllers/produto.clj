@@ -1,5 +1,7 @@
 (ns palestra-clojure.controllers.produto
-  (:require [palestra-clojure.db.produto :as db-produto]))
+  (:require [palestra-clojure.logic.produto :as logic-produto]
+            [palestra-clojure.db.produto :as db-produto]))
 
-(defn listar-produtos []
-  (db-produto/buscar))
+(defn lista-produtos-disponiveis []
+  (let [produtos (db-produto/busca)]
+    (logic-produto/remove-produtos-esgotados produtos)))

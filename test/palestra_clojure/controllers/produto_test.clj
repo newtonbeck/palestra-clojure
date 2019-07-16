@@ -4,11 +4,13 @@
             [palestra-clojure.db.produto :as db-produto]
             [mock-clj.core :refer :all]))
 
-(deftest listar-produtos
-  (with-mock [db-produto/buscar {:id    1
-                                 :nome  "Macbook"
-                                 :valor 10000}]
-             (is (= (controller-produto/listar-produtos)
-                    {:id    1
-                     :nome  "Macbook"
-                     :valor 10000}))))
+(def produtos-mock-db
+  [{:id         1
+    :nome       "Macbook"
+    :valor      10000
+    :quantidade 1}])
+
+(deftest lista-produtos-disponiveis
+  (with-mock [db-produto/busca produtos-mock-db]
+             (is (= (controller-produto/lista-produtos-disponiveis)
+                    produtos-mock-db))))

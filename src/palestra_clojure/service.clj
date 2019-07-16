@@ -8,8 +8,8 @@
 (defroutes app-routes
   (GET "/produtos"
     request
-    {:status 200 :headers {"Content-type" "application/json"} 
-     :body (controller-produto/listar-produtos)})
+    {:status  200
+     :body    (controller-produto/lista-produtos-disponiveis)})
   (route/not-found "<h1>Page not found</h1>"))
 
-(def handler (wrap-json-response app-routes))
+(def handler (wrap-json-response app-routes :pretty true))
