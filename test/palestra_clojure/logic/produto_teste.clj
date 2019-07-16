@@ -1,4 +1,4 @@
-(ns palestra-clojure.logic.produto-test
+(ns palestra-clojure.logic.produto-teste
   (:require [clojure.test :refer :all]
             [palestra-clojure.logic.produto :as logic-produto]
             [mock-clj.core :refer :all]))

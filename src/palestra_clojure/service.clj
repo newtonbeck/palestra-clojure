@@ -12,4 +12,4 @@
      :body    (controller-produto/lista-produtos-disponiveis)})
   (route/not-found "<h1>Page not found</h1>"))
 
-(def handler (wrap-json-response app-routes :pretty true))
+(def handler (wrap-json-response app-routes))

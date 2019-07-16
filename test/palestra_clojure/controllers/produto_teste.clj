@@ -1,4 +1,4 @@
-(ns palestra-clojure.controllers.produto-test
+(ns palestra-clojure.controllers.produto-teste
   (:require [clojure.test :refer :all]
             [palestra-clojure.controllers.produto :as controller-produto]
             [palestra-clojure.db.produto :as db-produto]
