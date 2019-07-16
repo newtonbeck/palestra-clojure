@@ -1,4 +1,4 @@
-(ns service_test
+(ns palestra-clojure.service_test
   (:require [clojure.test :refer :all]
             [palestra-clojure.service :as s]
             [mock-clj.core :refer :all]
