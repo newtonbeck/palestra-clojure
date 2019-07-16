@@ -6,8 +6,8 @@
             [palestra-clojure.controllers.produto :as controller-produto]))
 
 (defroutes app-routes
-  (GET "/produtos" 
-    request 
+  (GET "/produtos"
+    request
     {:status 200 :headers {"Content-type" "application/json"} 
      :body (controller-produto/listar-produtos)})
   (route/not-found "<h1>Page not found</h1>"))

@@ -10,5 +10,6 @@
                  [compojure "1.6.1"]
                  [mysql/mysql-connector-java "5.1.47"]
                  [org.clojure/java.jdbc "0.7.9"]
-                 [mock-clj "0.2.0"]]
+                 [mock-clj "0.2.0"]
+                 [ring/ring-mock "0.4.0"]]
   :main palestra-clojure.main)

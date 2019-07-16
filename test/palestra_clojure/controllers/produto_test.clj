@@ -12,4 +12,3 @@
                     {:id    1
                      :nome  "Macbook"
                      :valor 10000}))))
-(run-tests)
