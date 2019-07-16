@@ -17,8 +17,8 @@
 
 (deftest produto-handler-test
   (with-mock
-   [db-produto/busca produtos-mock-db]
-   (is (= (s/handler (mock/request :get "/produtos"))
+   [db-produto/buscar produtos-mock-db]
+   (is (= (s/handler (mock/request :get "/produtos-disponiveis"))
           {:status  200,
            :headers {"Content-Type" "application/json; charset=utf-8"},
            :body    "[{\"id\":1,\"nome\":\"Macbook\",\"valor\":10000,\"quantidade\":11}]"}))))

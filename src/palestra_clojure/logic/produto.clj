@@ -8,6 +8,6 @@
   [produto]
   (= (get-quantidade produto) 0))
 
-(defn remove-produtos-esgotados
+(defn remover-produtos-esgotados
   [produtos]
   (filter #(not (esgotado? %)) produtos))

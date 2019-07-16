@@ -9,5 +9,5 @@
    :host     "localhost"
    :port     3306})
 
-(defn busca []
+(defn buscar []
   (jdbc/query db-spec ["select * from produto"]))

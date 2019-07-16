@@ -10,7 +10,7 @@
     :valor      10000
     :quantidade 1}])
 
-(deftest lista-produtos-disponiveis
-  (with-mock [db-produto/busca produtos-mock-db]
-             (is (= (controller-produto/lista-produtos-disponiveis)
+(deftest listar-produtos-disponiveis
+  (with-mock [db-produto/buscar produtos-mock-db]
+             (is (= (controller-produto/listar-produtos-disponiveis)
                     produtos-mock-db))))

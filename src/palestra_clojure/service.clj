@@ -6,10 +6,10 @@
             [palestra-clojure.controllers.produto :as controller-produto]))
 
 (defroutes app-routes
-  (GET "/produtos"
+  (GET "/produtos-disponiveis"
     request
-    {:status  200
-     :body    (controller-produto/lista-produtos-disponiveis)})
+    {:status 200
+     :body   (controller-produto/listar-produtos-disponiveis)})
   (route/not-found "<h1>Page not found</h1>"))
 
 (def handler (wrap-json-response app-routes))

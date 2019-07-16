@@ -17,8 +17,8 @@
     :valor      1000
     :quantidade 0}])
 
-(deftest remove-produtos-esgotados
-  (is (= (logic-produto/remove-produtos-esgotados produtos-db)
+(deftest remover-produtos-esgotados
+  (is (= (logic-produto/remover-produtos-esgotados produtos-db)
          [{:id         1
            :nome       "Macbook"
            :valor      10000
