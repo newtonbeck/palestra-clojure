@@ -1,13 +1,9 @@
 (ns palestra-clojure.logic.produto)
 
-(defn get-quantidade
+(defn produtos-nao-esgotados
   [produto]
-  (:quantidade produto))
-
-(defn esgotado?
-  [produto]
-  (= (get-quantidade produto) 0))
+  (not (= (get produto :quantidade) 0)))
 
 (defn remover-produtos-esgotados
   [produtos]
-  (filter #(not (esgotado? %)) produtos))
+  (filter produtos-nao-esgotados produtos))
