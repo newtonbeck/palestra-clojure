@@ -1,9 +1,10 @@
 (ns palestra-clojure.service_teste
   (:require [clojure.test :refer :all]
             [mock-clj.core :refer :all]
-            [ring.mock.request :as mock]
             [palestra-clojure.service :as s]
-            [palestra-clojure.db.produto :as db-produto]))
+            [palestra-clojure.main :as main]
+            [palestra-clojure.db.produto :as db-produto]
+            [io.pedestal.test :as test]))
 
 (def produtos-mock-db
   [{:id         1
@@ -18,7 +19,8 @@
 (deftest produto-handler-test
   (with-mock
    [db-produto/buscar produtos-mock-db]
-   (is (= (s/handler (mock/request :get "/produtos-disponiveis"))
-          {:status  200,
-           :headers {"Content-Type" "application/json; charset=utf-8"},
-           :body    "[{\"id\":1,\"nome\":\"Macbook\",\"valor\":10000,\"quantidade\":11}]"}))))
+   (let [test-server (:io.pedestal.http/service-fn (main/cria-o-servidor))
+         response (test/response-for test-server :get "/produtos-disponiveis")]
+   (is 
+    (= (:status response) 200)
+    (= (:body response) "[{\"id\":1,\"nome\":\"Macbook\",\"valor\":10000,\"quantidade\":11}]")))))
