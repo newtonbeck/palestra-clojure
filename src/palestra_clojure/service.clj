@@ -1,15 +1,14 @@
 (ns palestra-clojure.service
   (:gen-class)
-  (:require [compojure.core :refer :all]
-            [compojure.route :as route]
-            [ring.middleware.json :refer [wrap-json-response]]
-            [palestra-clojure.controllers.produto :as controller-produto]))
+  (:require [io.pedestal.http.route.definition.table :as table]
+            [palestra-clojure.controllers.produto :as controller]))
 
-(defroutes app-routes
-  (GET "/produtos-disponiveis"
-    request
-    {:status 200
-     :body   (controller-produto/listar-produtos-disponiveis)})
-  (route/not-found "<h1>Page not found</h1>"))
+(defn listar-produtos-disponiveis [request]
+  {:status 200
+   :body (controller/listar-produtos-disponiveis)
+   :headers {"Content-Type" "application/json"}})
 
-(def handler (wrap-json-response app-routes))
+(def rotas
+  (table/table-routes [
+    ["/produtos-disponiveis" :get listar-produtos-disponiveis :route-name :listar-produtos-disponiveis]
+  ]))
