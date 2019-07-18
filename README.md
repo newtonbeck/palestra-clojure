@@ -1,14 +1,37 @@
-# palestra-clojure
+# Clojure: do zero ao deploy de uma API REST
 
-A Clojure library designed to ... well, that part is up to you.
+## Descrição da palestra
+Você programa ou já programou em Java? Você tentou aprender Clojure mas nunca conseguiu ir muito longe? Sempre que você vê um exemplo de programação funcional ele parece muito distante do que você faz no dia a dia? Se você respondeu sim para essas perguntas então essa palestra é pra você!
 
-## Usage
+Nesta palestra começaremos do básico de Clojure e iremos evoluindo, passo a passo, até criar um endpoint HTTP que busca dados num banco de dados MySQL e retorna esses dados em formato JSON para seus clientes. Por fim iremos empacotar e fazer o deploy da nossa aplicação no cloud.
 
-FIXME
+# Como rodar o projeto?
 
-## License
+## Requisitos
 
-Copyright © 2019 FIXME
+- JDK 8 ou mais recente
+- Leiningen (https://leiningen.org/)
+- Docker
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+## Rodando o projeto
+
+Para subir o banco de dados MySQL execute o comando abaixo dentro do diretório do projeto:
+```
+docker-compose up -d
+```
+
+Para subir a API em Clojure execute o comando abaixo dentro do diretório do projeto:
+```
+lein run
+```
+
+Para gerar o `jar` do projeto execute o comando abaixo dentro do diretório do projeto:
+```
+lein uberjar
+```
+O arquivo `jar` será gerado dentro do diretório `target` e terá o nome `palestra-clojure-0.1.0-SNAPSHOT-standalone.jar`.
+
+Para rodar o arquivo `jar` gerado execute o comando abaixo:
+```
+java -jar target/palestra-clojure-0.1.0-SNAPSHOT-standalone.jar
+```
