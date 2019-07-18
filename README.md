@@ -20,6 +20,8 @@ Para subir o banco de dados MySQL execute o comando abaixo dentro do diretório 
 docker-compose up -d
 ```
 
+Conecte-se ao banco de dados e execute os comandos que estão no arquivo `run-this.sql` para criar o banco de dados e os produtos usados no projeto de exemplo.
+
 Para subir a API em Clojure execute o comando abaixo dentro do diretório do projeto:
 ```
 lein run

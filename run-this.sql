@@ -15,4 +15,5 @@ INSERT INTO produto(nome, preco, quantidade) VALUES
   ('Nokia N97 raro para colecionadores', 5000.00, 1),
   ('Patinete elétrico', 3500.00, 5),
   ('Robô da Xiaomi', 600.00, 50),
-  ('Aspirador de pó da Xiaomi', 2500.00, 3);
+  ('Aspirador de pó da Xiaomi', 2500.00, 3),
+  ('Adaptador USB C', 300, 0);
