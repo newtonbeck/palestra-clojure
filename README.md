@@ -1,5 +1,8 @@
 # Clojure: do zero ao deploy de uma API REST
 
+## Slides da palestra
+Os slides estão no arquivo `slides.pdf`.
+
 ## Descrição da palestra
 Você programa ou já programou em Java? Você tentou aprender Clojure mas nunca conseguiu ir muito longe? Sempre que você vê um exemplo de programação funcional ele parece muito distante do que você faz no dia a dia? Se você respondeu sim para essas perguntas então essa palestra é pra você!
 
